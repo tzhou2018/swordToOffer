@@ -1,4 +1,6 @@
 # -*- coding:utf-8 -*-
+# 思路：注意栈和队列的性质。
+# 栈是先进后出且只能从栈顶出；队列则为先进先出，一般都是从队头出
 class Solution:
     def __init__(self):
         self.stack1 = []
