@@ -1,4 +1,5 @@
 # 方法 1
+# 借助逻辑运算符
 def NumberOf2(n):
         # write code here
         count = 0
