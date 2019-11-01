@@ -6,11 +6,11 @@
 class Solution:
     def LastRemaining_Solution(self, n, m):
         # write code here
-        if n <= 0 or m <=0:
+        if n <= 0 or m <= 0:
             return -1
         listNum = list(range(n))
         out = 0
         while len(listNum) > 1:
-            out = (out + (m-1)) % len(listNum)
+            out = (out + (m - 1)) % len(listNum)
             del listNum[out]
         return listNum[0]
