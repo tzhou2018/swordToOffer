@@ -15,6 +15,7 @@ class Solution:
         return _stack
 
 
+
 if __name__ == '__main__':
     pHead = ListNode(1)
     p = pHead

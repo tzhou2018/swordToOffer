@@ -15,6 +15,7 @@ class Solution:
     def movingCount(self, threshold, rows, cols):
         # write code here
         matrix = [[0 for col in range(cols)] for row in range(rows)]
+        print(matrix)
         return self.findGrid(threshold, rows, cols, matrix, 0, 0)
 
     def findGrid(self, threshold, rows, cols, matrix, i, j):
@@ -32,4 +33,4 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    solution.movingCount(4,3,4)
+    print(solution.movingCount(4,3,4))
