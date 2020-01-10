@@ -17,7 +17,7 @@ class Solution:
             if sequence[i] > root:
                 break
         # 从位置i到len(sequence)-1 的所有元素都比根节点的值大
-        for j in range(i, len(sequence)-1):
+        for j in range(i, len(sequence) - 1):
             if sequence[j] < root:
                 return False
         left, right = True, True
@@ -26,4 +26,4 @@ class Solution:
         # 注意：序列中最后一位是根节点，不可以取到
         if len(sequence[i:-1]) > 0:
             right = self.VerifySquenceOfBST(sequence[i:-1])
-        return left, right
+        return left and right

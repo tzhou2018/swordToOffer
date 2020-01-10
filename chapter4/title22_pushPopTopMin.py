@@ -10,6 +10,7 @@ class Solution:
             self.minStack.append(node)
         if self.minStack[-1] > node:
             self.minStack.append(node)
+
         self.data.append(node)
     def pop(self):
         if self.minStack[-1] == self.data[-1]:

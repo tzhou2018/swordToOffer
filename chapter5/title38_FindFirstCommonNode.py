@@ -11,6 +11,8 @@ class ListNode:
     def __init__(self, x):
         self.val = x
         self.next = None
+
+
 # 方法1： 从表头开始遍历，短的先遍历完，然后指向长的表头；
 # 等到长的遍历完之后指向短的表头，此时两指针所指向的剩余链表长度相当
 class Solution:
@@ -19,7 +21,7 @@ class Solution:
         if not pHead1 or not pHead2:
             return None
         curl1, curl2 = pHead1, pHead2
-        print(pHead1.val, pHead2.val)
+        # print(pHead1.val, pHead2.val)
         while curl1 != curl2:
             # print(curl1.val, curl2.val)
             curl1 = curl1.next if curl1 is not None else pHead2
@@ -28,10 +30,12 @@ class Solution:
             # print("curl2:", curl2.val)
         # 此时curl1, curl2 都指向空
         if curl1 == curl2:
-            print(curl1.val)
+            # print(curl1.val)
+            # print("curl1,curl2")
             return curl1
         else:
             return None
+
 
 def create_linked_list(arr=None):
     pHead = ListNode(arr[0])
@@ -41,10 +45,12 @@ def create_linked_list(arr=None):
         p.next = node
         p = node
     return pHead
+
+
 if __name__ == '__main__':
     # 有问题.测试没有通过
-    p1 = create_linked_list(arr=[2, 1,0,1])
-    p2 = create_linked_list(arr=[4, 3, 1, 0,1])
+    p1 = create_linked_list(arr=[2, 1, 0, 1])
+    p2 = create_linked_list(arr=[4, 3, 1, 0, 1])
     print(Solution().FindFirstCommonNode(p1, p2))
     # p = p1
 # 方法 2： 通过比较结点上的值来判断；感觉这种方法不严谨。

@@ -7,6 +7,8 @@ Email: t-zhou@foxmail.com
 date: 2019/11/4 19:32
 desc:
 '''
+
+
 # 思路：
 # 采用广度优先遍历。
 # 1)从根节点开始，将每层的结点存储在curLayerNodes中；
@@ -16,6 +18,8 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
+
+
 class Solution:
     def Print(self, pRoot):
         # write code here
@@ -41,3 +45,5 @@ class Solution:
                 ans.append(curLayerValues)
             shift = not shift
         return ans
+
+

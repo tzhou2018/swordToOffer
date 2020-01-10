@@ -27,4 +27,4 @@ if __name__ == '__main__':
         node = ListNode(i)
         p.next = node
         p = node
-    print(Solution().FindKthToTail(phead, 3).val)
+    print(Solution().FindKthToTail(phead, 11).val)

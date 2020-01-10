@@ -13,28 +13,38 @@ class Solution:
 # 方法 2
 # -*- coding:utf-8 -*-
 # 思路： 类似于title45 方法2
-class Solution:
+class Solution(object):
     def ReverseSentence(self, s):
-        # write code here
-        if not s:
-            return s
-        s = list(s)
-        self.reverse(s, 0, len(s) - 1)
-        start, end = 0, 0
-        while start < len(s):
-            if s[start] == ' ':
-                start += 1
-                end += 1
-            elif end == len(s) or s[end] == ' ':
-                self.reverse(s, start, end - 1)
-                end += 1
-                start = end
-            else:
-                end += 1
-        return ''.join(s)
+        """
+        :type s: str
+        :rtype: str
+        """
 
-    def reverse(self, s, start, end):
-        while start < end:
-            s[start], s[end] = s[end], s[start]
-            start += 1
-            end -= 1
+        size = len(s)
+        arr = list(s)
+
+        self.__reverse(arr, 0, size - 1)
+
+        begin = 0
+        index = 0
+        while index < size:
+            if arr[index] == ' ':
+                self.__reverse(arr, begin, index - 1)
+                begin = index + 1
+            index += 1
+        # 最后还要反转一下
+
+        self.__reverse(arr, begin, size - 1)
+        return ''.join(arr)
+
+    def __reverse(self, arr, left, right):
+        if left >= right:
+            return
+        while left < right:
+            arr[left], arr[right] = arr[right], arr[left]
+            left += 1
+            right -= 1
+
+
+if __name__ == '__main__':
+    print(Solution().ReverseSentence("I am a student."))
