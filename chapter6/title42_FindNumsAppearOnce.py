@@ -7,7 +7,7 @@ class Solution:
     # 返回[a,b] 其中ab是出现一次的两个数字
     def FindNumsAppearOnce(self, array):
         # write code here
-        result = []
+        # result = []
         dubNumber = []
         for i in range(len(array)):
             count = 0
@@ -17,11 +17,11 @@ class Solution:
                         count += 1
                         dubNumber.append(array[j + 1])
                         # array.pop(j)
-            if count == 0:
-                result.append(array[i])
+            # if count == 0:
+            #     result.append(array[i])
         # print(result)
         # print(dubNumber)
-        return list(set(result).difference(set(dubNumber)))
+        return list(set(array).difference(set(dubNumber)))
 
 
 # 方法 2

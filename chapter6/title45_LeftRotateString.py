@@ -16,8 +16,7 @@ class Solution:
             result.append(s[:n])
         return ''.join(result)
 
-# 方法 2
-# -*- coding:utf-8 -*-
+
 # 方法 2
 # 将所给字符串分为三部分进行逆转排序。首先将前n个逆转，之后将[n:]逆转，
 # 最后将列表中的所有元素逆转并拼接

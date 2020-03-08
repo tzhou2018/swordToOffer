@@ -36,7 +36,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    maxRes = Solution().cutRope(7)
+    maxRes = Solution().cutRope(6)
     print(maxRes)
 
 

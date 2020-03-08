@@ -4,8 +4,10 @@
 class Solution:
     def Sum_Solution(self, n):
         # write code here
-        listNum = list(range(1, n+1))
+        listNum = list(range(1, n + 1))
         return sum(listNum)
+
+
 # 方法2
 # 思路：
 # 1) 需利用逻辑与的短路特性实现递归终止;
@@ -14,11 +16,21 @@ class Solution:
 class Solution:
     def __init__(self):
         self.res = 0
+
     def _sum(self, n):
         self.res += n
         n -= 1
-        return n >0 and self.Sum_Solution(n)
+        return n > 0 and self.Sum_Solution(n)
+
     def Sum_Solution(self, n):
         # write code here
         self._sum(n)
         return self.res
+
+
+# 方法3
+# 利用等差公式来计算，只用加法，乘方和位运算；
+
+class Solution:
+    def getSum(self, n):
+        return (n ** 2 + n) >> 1

@@ -12,7 +12,8 @@ class Solution:
         temp = data[:]
         return self.Merge(data, temp, low, high) % 1000000007
 
-    # temp 作为辅助数组，每次将temp中基本有序的元素赋值给 data，data赋值给temp继续归并
+    # temp 作为辅助数组，每次将temp中基本有序的元素赋值给 data，
+    # data赋值给temp继续归并
     def Merge(self, data, temp, low, high):
         if low >= high:
             return 0

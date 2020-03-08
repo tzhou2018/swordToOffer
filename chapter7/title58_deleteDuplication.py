@@ -11,7 +11,7 @@ desc:
 
 # 思路：
 # 为了便于操作，我们这里加上头结点 first=ListNode(-1);
-# 指针 cur 始终执向当前节点；
+# 指针 cur 始终指向当前节点；
 # 为了便于操作，引入 last 指针，last 始终置于cur之前；
 
 class ListNode:
@@ -37,6 +37,7 @@ class Solution:
                 cur = cur.next
                 last = last.next
         return first.next
+
 
 
 def create_linked_list(arr=None):

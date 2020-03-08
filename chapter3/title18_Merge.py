@@ -1,6 +1,7 @@
 # 方法 1
 # 创建一个空链表p，将pHead1，pHead2 的头结点比较，值小的加入到p中
-# 若某个链表为空，则另一链表的所有值都大于此前的链表，此时只需将剩下的部分追加到p的尾部
+# 若某个链表为空，则另一链表的所有值都大于此前的链表，
+# 此时只需将剩下的部分追加到p的尾部
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -18,7 +19,7 @@ class Solution:
         # 创建头结点，便于处理
         p_merge = ListNode(0)
         p = p_merge
-        while pHead1  and pHead2 :
+        while pHead1 and pHead2:
             if pHead1.val < pHead2.val:
                 p_merge.next = pHead1
                 p_merge = pHead1
@@ -55,6 +56,7 @@ if __name__ == '__main__':
     while p:
         print(p.val, end='\t')
         p = p.next
+
 
 # 方法 2
 # 使用递归

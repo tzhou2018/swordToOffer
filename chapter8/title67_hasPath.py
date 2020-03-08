@@ -9,7 +9,8 @@ desc:
 '''
 # 思路：
 # 1) hasPath 方法挨个遍历matrix中的元素，找出第一个符合要求的元素；
-# 2) find 判断当前元素 matrix[index] 是否满足path。如果满足，就将当前的tem[index]置位False，
+# 2) find 判断当前元素 matrix[index] 是否满足path。如果满足，
+# 就将当前的tem[index]置位False，
 #   下次判断时，不用考虑这个元素；之后使用递归依次判断当前元素的上下左右元素是否满足条件。
 #
 class Solution:

@@ -1,9 +1,9 @@
-
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
 
 # 方法1 非递归
 class Solution:
@@ -21,8 +21,9 @@ class Solution:
             if node.right != None:
                 stack.append((node.right, path + [node.right.val]))
             if node.left != None:
-                stack.append((node.left, path + [node.left.val] ))
+                stack.append((node.left, path + [node.left.val]))
         return result
+
 
 # 方法2 递归
 # 解题思路：

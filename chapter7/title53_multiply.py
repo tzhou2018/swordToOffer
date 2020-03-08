@@ -33,7 +33,8 @@ class Solution:
 # 可以将目标数组B分为两部分计算：
 # C[i] = C[i-1] * A[i-1]= A[0]*A[1]*...*A[i-1]
 # D[i] = D[i+1] * A[i+1]= A[i+1]*...*A[n-1]
-# 如果将B当做二维数组，那么C[i]表示的为下三角，D[i]为上三角
+# 如果将B当做二维数组，那么C[i]表示的为下三角，D[i]为上三角，
+# 对角线元素值用 1 表示。
 class Solution:
     def multiply(self, A):
         if not A:
