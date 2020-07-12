@@ -8,6 +8,8 @@ class TreeNode:
         self.val = x
         self.left = None
         self.right = None
+
+
 class Solution:
     def PrintFromTopToBottom(self, root):
         ans = []
@@ -23,3 +25,15 @@ class Solution:
                 _queue.append(item.right)
 
         return ans
+
+
+
+if __name__ == '__main__':
+    head = TreeNode(0)
+    head.left = TreeNode(1)
+    head.right = TreeNode(2)
+    head.left.left = TreeNode(3)
+    head.left.right = TreeNode(4)
+    head.right.left = TreeNode(5)
+    head.right.right = TreeNode(6)
+    print(Solution().PrintFromTopToBottom(head))

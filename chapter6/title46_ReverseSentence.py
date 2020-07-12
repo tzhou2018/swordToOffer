@@ -10,10 +10,11 @@ class Solution:
         s = s[::-1]
         return ' '.join(s)
 
+
 # 方法 2
 # -*- coding:utf-8 -*-
 # 思路： 类似于title45 方法2
-class Solution(object):
+class Solution1(object):
     def ReverseSentence(self, s):
         """
         :type s: str
@@ -47,4 +48,4 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    print(Solution().ReverseSentence("I am a student."))
+    print(Solution1().ReverseSentence("I'am a student."))

@@ -7,6 +7,8 @@ Email: t-zhou@foxmail.com
 date: 2020/1/15 13:13
 desc:
 '''
+
+
 class Solution:
     def maxdiff(self, nums):
         if not nums:

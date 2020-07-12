@@ -1,5 +1,6 @@
 # swordToOffer
-使用python3编写《剑指offer》所有算法
+使用python3编写《剑指offer》所有算法.
+所有题目序列与”牛客网“一致，其中书中的补充题目在"other"文件下。
 
 ## [chapter2](/chapter2)
 > 试题 3：[二维数组中的查找](/chapter2/title3_arraySearch.py)

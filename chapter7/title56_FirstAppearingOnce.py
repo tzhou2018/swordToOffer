@@ -7,6 +7,8 @@ Email: t-zhou@foxmail.com
 date: 2019/10/29 20:53
 desc:
 '''
+
+
 # 思路：
 # Insert 方法将字符流依次保存到s中，并且用字典存储每个字符出现的次数；
 # FirstAppearingOnce 方法返回结果

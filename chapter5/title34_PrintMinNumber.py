@@ -15,18 +15,25 @@ class Solution:
         result = list(set(result))
         result.sort()
         return result[0]
+
+
 # 方法2
-class Solution:
+class Solution1:
     def PrintMinNumber(self, numbers):
         # write code here
         if not numbers:
             return ''
         numbers = list(map(str, numbers))
         len_num = len(numbers)
-        # 每次循环确定一位数字
+        # 每次循环确定一个元素
         for i in range(len(numbers) - 1):
             for j in range(i + 1, len_num):
                 tmp = int(numbers[i] + numbers[j]) - int(numbers[j] + numbers[i])
                 if tmp > 0:
                     numbers[i], numbers[j] = numbers[j], numbers[i]
         return ''.join(numbers)
+
+
+
+if __name__ == '__main__':
+    print(Solution().PrintMinNumber([3, 21, 321]))

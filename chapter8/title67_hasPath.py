@@ -7,6 +7,8 @@ Email: t-zhou@foxmail.com
 date: 2019/11/10 10:39
 desc:
 '''
+
+
 # 思路：
 # 1) hasPath 方法挨个遍历matrix中的元素，找出第一个符合要求的元素；
 # 2) find 判断当前元素 matrix[index] 是否满足path。如果满足，
@@ -42,7 +44,8 @@ class Solution:
         tmp[index] = True
         return False
 
+
 if __name__ == '__main__':
     solution = Solution()
-    matrix = ['a', 'b', 'c', 'e', 's', 'f', 'c', 's', 'a', 'd', 'e', 'e' ]
-    solution.hasPath(matrix, 3, 4,"bcced")
+    matrix = ['a', 'b', 'c', 'e', 's', 'f', 'c', 's', 'a', 'd', 'e', 'e']
+    solution.hasPath(matrix, 3, 4, "bcced")

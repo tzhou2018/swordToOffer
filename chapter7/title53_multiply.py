@@ -7,6 +7,8 @@ Email: t-zhou@foxmail.com
 date: 2019/10/28 18:59
 desc:
 '''
+
+
 # 方法1
 # 思路：
 # 观察题目，若是可以使用除法，那么我们可以这样来构建B数组：
@@ -19,7 +21,7 @@ class Solution:
         if not A:
             return None
         lenA = len(A)
-        B = [0]*lenA
+        B = [0] * lenA
         for i in range(lenA):
             temp = 1
             for j in range(lenA):
@@ -27,6 +29,8 @@ class Solution:
                     temp *= A[j]
             B[i] = temp
         return B
+
+
 # 方法 2
 # 思路：
 # B[i]=A[0]*A[1]*...*A[i-1]*A[i+1]*...*A[n-1]；
@@ -49,3 +53,17 @@ class Solution:
             temp *= A[j + 1]
             B[j] *= temp
         return B
+
+    def test(self,A):
+        if not A:
+            return None
+        lenA = len(A)
+        B = [0] * lenA
+        B[0] = 1
+        for i in range(1,lenA):
+            B[i] = B[i-1] * A[i-1]
+        temp = 1
+        for j in range(lenA -2,-1,-1):
+            temp *= A[j+1]
+            B[j] *= temp
+        pass

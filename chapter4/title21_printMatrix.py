@@ -17,23 +17,18 @@ class Solution:
                 break
             matrix = self.turn(matrix)
         return ans
+
     # 利用 * 号操作符，可以将二维数组中每一列的元素取出，类似于拍扁。
     def turn(self, matrix):
         return list(map(list, zip(*matrix)))[::-1]
 
-if __name__ == '__main__':
-    solution = Solution()
-    import numpy as np
-    arr1 = np.arange(12).reshape(3,4)
-    list1 = arr1.tolist()
-    print(solution.printMatrix(list1))
 
 # 方法 2
 # 思路：
 # 采用最原始的方法，循环打印；打印一圈分为四步：
 # 1)从左至右；2）从上至下；3）从右至左；4）从下至上；
 
-class Solution:
+class Solution2:
     # matrix类型为二维列表，需要返回列表
     def printMatrix(self, matrix):
         # write code here
@@ -63,3 +58,59 @@ class Solution:
             for i in range(endY - 1, start, -1):
                 ans.append(matrix[i][start])
         return ans
+
+
+# 方法3
+# 同方法2，参考程序员面试指南，更容易理解。
+# 设计一种逻辑容易理解，代码易于实现转圈的遍历方式。
+# 知道矩阵的左上顶点与右下顶点即可确定一个矩阵，
+# 然后这两个点收缩，直至左上顶点坐标大于右下顶点坐标。
+class Solution3:
+    def printMatrix(self, matrix):
+        # 左上顶点坐标
+        tr, tc = 0, 0
+        dr, dc = len(matrix) - 1, len(matrix[0]) - 1
+        res = []
+        while tr <= dr and tc <= dc:
+            self.printEdge(matrix, res, tr, tc, dr, dc)
+            tr += 1
+            tc += 1
+            dr -= 1
+            dc -= 1
+        return res
+
+    def printEdge(self, matrix, res, tr, tc, dr, dc):
+        # 只有一行
+        if tr == dr:
+            for i in range(tc, dc + 1):
+                res.append(matrix[tr][i])
+        # 只有一列
+        elif tc == dc:
+            for i in range(tr, dr + 1):
+                res.append(matrix[i][tc])
+        # 正常
+        else:
+            curC = tc
+            curR = tr
+            while curC != dc:
+                res.append(matrix[tr][curC])
+                curC += 1
+            while curR != dr:
+                res.append(matrix[curR][dc])
+                curR += 1
+            while curC != tc:
+                res.append(matrix[dr][curC])
+                curC -= 1
+            while curR != tr:
+                res.append(matrix[curR][tc])
+                curR -= 1
+
+
+if __name__ == '__main__':
+    solution = Solution3()
+    import numpy as np
+
+    arr1 = np.arange(1, 17).reshape(4, 4)
+    list1 = arr1.tolist()
+    print(list1)
+    print(solution.printMatrix(list1))

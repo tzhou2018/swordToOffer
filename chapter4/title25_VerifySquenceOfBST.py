@@ -27,3 +27,4 @@ class Solution:
         if len(sequence[i:-1]) > 0:
             right = self.VerifySquenceOfBST(sequence[i:-1])
         return left and right
+

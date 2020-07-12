@@ -6,6 +6,7 @@ class Solution:
         if n < 2:
             return n
         item1, item2 = 0, 1
+        ans = 0
         for _ in range(2, n+1):
             ans = item1 + item2
             item1, item2 = item2, ans

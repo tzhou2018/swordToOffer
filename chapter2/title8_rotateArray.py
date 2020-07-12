@@ -26,6 +26,7 @@ class Solution:
                 mid = q
                 break
             mid = (q + p) // 2
+            # 这种情况只能顺序查找
             if rotateArray[p] == rotateArray[q] and \
                     rotateArray[q] == rotateArray[mid]:
                 return self.minInOrder(rotateArray, p, q)
@@ -41,6 +42,8 @@ class Solution:
             if rotateArray[i] < result:
                 result = rotateArray[i]
         return result
+
+
 if __name__ == '__main__':
-    # print(Solution().minNumberInRotateArray([1,0,1,1,1]))
+    # print(Solution().minNumberInRotateArray([1, 0, 1, 1, 1]))
     print(Solution().minNumberInRotateArray([3,4,5,1,2]))

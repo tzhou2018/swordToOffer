@@ -18,6 +18,7 @@ class Solution:
 
 
 # 方法 2
+# 一个萝卜一个坑
 # 使用桶排序的思想来解决，思想就是把一个数放在它该放的位置上。
 class Solution(object):
     def duplicateInArray(self, nums):
@@ -40,6 +41,7 @@ class Solution(object):
                     return nums[i]
                 self.__swap(nums, i, nums[i])
         return -1
+
 
     def __swap(self, nums, index1, index2):
         if index1 == index2:

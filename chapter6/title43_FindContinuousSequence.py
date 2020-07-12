@@ -8,7 +8,7 @@ class Solution:
         if not tsum:
             return []
         i, j = 1, 2
-        _len = (tsum + 1)//2
+        _len = (tsum + 1) // 2
         _sum = i + j
         result = []
         # 由于至少包括两个数， 因为这里循环条件设为 i<_len
@@ -18,8 +18,8 @@ class Solution:
             while _sum > tsum and i < _len:
                 _sum -= i
                 i += 1
-                if _sum ==tsum:
-                    result.append(range(i, j+1))
+                if _sum == tsum:
+                    result.append(range(i, j + 1))
             j += 1
             _sum += j
         return result

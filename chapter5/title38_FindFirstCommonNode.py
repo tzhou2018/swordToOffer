@@ -14,7 +14,8 @@ class ListNode:
 
 
 # 方法1： 从表头开始遍历，短的先遍历完，然后指向长的表头；
-# 等到长的遍历完之后指向短的表头，此时两指针所指向的剩余链表长度相当
+# 等到长的遍历完之后指向短的表头，此时两指针所指向的剩余链表长度相当.
+# 这种方法只考虑两个无环链表相交
 class Solution:
     def FindFirstCommonNode(self, pHead1, pHead2):
         # write code here
@@ -73,27 +74,27 @@ if __name__ == '__main__':
 
 # 方法3
 # 解题思路：先让长的链表往前走n步（n为两链表长度差），之后两链表依次往后遍历并比较
-# class Solution:
-#     def FindFirstCommonNode(self, head1, head2):
-#         # write code here
-#         if not head1 or not head2:
-#             return None
-#         lhead1 = []
-#         lhead2 = []
-#         cur1, cur2 = head1, head2
-#         while head1:
-#             lhead1.append(head1.val)
-#             head1 = head1.next
-#         while head2:
-#             lhead2.append(head2.val)
-#             head2 = head2.next
-#         if len(lhead1) > len(lhead2):
-#             for _ in range(len(lhead1) - len(lhead2)):
-#                 cur1 = cur1.next
-#         else:
-#             for _ in range(len(lhead2) - len(lhead1)):
-#                 cur2 = cur2.next
-#         while cur2 != cur1:
-#             cur1 = cur1.next
-#             cur2 = cur2.next
-#         return cur1
+class Solution:
+    def FindFirstCommonNode(self, head1, head2):
+        # write code here
+        if not head1 or not head2:
+            return None
+        lhead1 = []
+        lhead2 = []
+        cur1, cur2 = head1, head2
+        while head1:
+            lhead1.append(head1.val)
+            head1 = head1.next
+        while head2:
+            lhead2.append(head2.val)
+            head2 = head2.next
+        if len(lhead1) > len(lhead2):
+            for _ in range(len(lhead1) - len(lhead2)):
+                cur1 = cur1.next
+        else:
+            for _ in range(len(lhead2) - len(lhead1)):
+                cur2 = cur2.next
+        while cur2 != cur1:
+            cur1 = cur1.next
+            cur2 = cur2.next
+        return cur1

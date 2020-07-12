@@ -29,6 +29,7 @@ class Solution:
         if len(ans) < k:
             return None
         return ans[k - 1]
+
     # 中序遍历
     def minOrder(self, root, ans):
         if not root:

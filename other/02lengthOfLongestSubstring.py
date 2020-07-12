@@ -32,6 +32,7 @@ class Solution:
                 lenS = len(ret)
         print(ret)
         return lenS
+
     # 方法 2
     # 动态规划
     # 找到递推公式： f(i)= f(i-1) +1
@@ -61,8 +62,9 @@ class Solution:
             # 设置字符与索引键值对
             map[s[i]] = i
         # 最后拉通看一遍最大值
+        print(dp)
         return max(dp)
 
 
 if __name__ == '__main__':
-    print(Solution().lengthOfLongestSubstring1('arabcacfr'))
+    print(Solution().lengthOfLongestSubstring1('abcaab'))

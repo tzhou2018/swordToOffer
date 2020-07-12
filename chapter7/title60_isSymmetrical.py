@@ -8,6 +8,7 @@ date: 2019/11/1 20:19
 desc:
 '''
 
+
 # class TreeNode:
 #     def __init__(self, x):
 #         self.val = x
@@ -23,6 +24,7 @@ class Solution:
     def isSymmetrical(self, pRoot):
 
         return self.isSymBT(pRoot, pRoot)
+
     def isSymBT(self, tree1, tree2):
         if tree1 is None and tree2 is None:
             return True
@@ -31,4 +33,15 @@ class Solution:
         if tree1.val != tree2.val:
             return False
         return self.isSymBT(tree1.left, tree2.right) and \
-            self.isSymBT(tree1.right, tree2.left)
+               self.isSymBT(tree1.right, tree2.left)
+
+    def isSymBT1(self, tree1, tree2):
+        if not tree1 and not tree2:
+            return True
+        if not tree1 or not tree2:
+            return False
+        if tree1.val != tree2.val:
+            return False
+        return self.isSymBT(tree1.left, tree2.right) \
+               and self.isSymBT(tree1.right, tree2.left)
+        pass

@@ -7,6 +7,8 @@ Email: t-zhou@foxmail.com
 date: 2019/11/10 21:58
 desc:
 '''
+
+
 # 思路
 # 同上一道题，采用回溯算法；
 # 从坐标(0, 0)开始行动。当它准备进入坐标为(i,j)的格子时，
@@ -32,6 +34,7 @@ class Solution:
             # print(count)
         return count
 
+
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.movingCount(4,3,4))
+    print(solution.movingCount(4, 3, 4))

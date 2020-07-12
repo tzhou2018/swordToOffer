@@ -8,12 +8,14 @@ date: 2019/11/1 19:38
 desc:
 '''
 
-# class TreeLinkNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-#         self.next = None
+
+class TreeLinkNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+        self.next = None
+
 
 # 参考牛客网：https://www.nowcoder.com/profile/777988/codeBookDetail?submissionId=12620199
 # 思路：
@@ -34,9 +36,15 @@ class Solution:
                 pNode = pNode.left
             return pNode
         else:
-            while pNode.next:
-                if pNode == pNode.next.left:
-                    return pNode.next
-                pNode = pNode.next
+            parent = pNode.next
+            while parent and parent.left != pNode:
+                pNode = parent
+                parent = parent.next
+            return parent
+            # 另一种写法
+            # while pNode.next:
+            #     if pNode == pNode.next.left:
+            #         return pNode.next
+            #     pNode = pNode.next
 
-        return None
+        # return None

@@ -42,7 +42,7 @@
 #
 #             | 1       ,(n=0 )
 # f(n) =      | 1       ,(n=1 )
-#             | 2*f(n-1),(n>=2)
+#             | 2**f(n-1),(n>=2)
 # -*- coding:utf-8 -*-
 class Solution:
     def jumpFloorII(self, number):

@@ -18,4 +18,3 @@ class Solution:
                 i5 += 1
             ans.append(tmp)
         return ans[-1]
-

@@ -29,5 +29,6 @@ class Solution:
         return res
 
 
+
 if __name__ == '__main__':
     print(Solution().findNumberAppearingOnce([1, 1, 1, 3]))

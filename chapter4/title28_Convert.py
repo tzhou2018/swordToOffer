@@ -1,10 +1,11 @@
-
 # -*- coding:utf-8 -*-
 class TreeNode:
     def __init__(self, x):
         self.val = x
         self.left = None
         self.right = None
+
+
 class Solution:
     def Convert(self, root):
         if not root:
@@ -32,7 +33,7 @@ class Solution:
         # 将右子树构造成双链表，返回链表头
         # right = self.Convert(root.right)
         # p = right
-        # # 定位至左子树的最右的一个节点
+        # # 定位至右子树的最左的一个节点
         # while right and p.left:
         #     p = p.left
         # # 如果右子树不为空，将该链表追加到root结点之后

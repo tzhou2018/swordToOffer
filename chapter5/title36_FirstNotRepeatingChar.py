@@ -18,3 +18,4 @@ class Solution:
             if dic[s[i]] == 1:
                 return i
         return -1
+

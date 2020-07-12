@@ -11,9 +11,11 @@ class Solution:
             for j in numbers:
                 if i == j:
                     count += 1
-            if count > len(numbers)/2:
+            if count > len(numbers) / 2:
                 return i
         return 0
+
+
 # 方法 2
 class Solution:
     def MoreThanHalfNum_Solution(self, numbers):

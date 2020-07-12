@@ -4,6 +4,7 @@ class ListNode:
         self.val = x
         self.next = None
 
+
 # 在牛客网上线上编程，我们只需书写这一段就行
 class Solution:
     # 返回从尾部到头部的列表值序列
@@ -13,7 +14,6 @@ class Solution:
             _stack.insert(0, listNode.val)
             listNode = listNode.next
         return _stack
-
 
 
 if __name__ == '__main__':

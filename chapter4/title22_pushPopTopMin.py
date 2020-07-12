@@ -24,3 +24,45 @@ class Solution:
 
     def min(self):
         return self.minStack[-1]
+
+
+"""
+方案2：
+压栈时：
+判断minStack是否为空：
+若为空，直接压入;
+否则，若minStack栈顶元素大于当前压入的元素node，直接压入；
+    否则，将minStack[-1]重复压入栈中
+"""
+
+
+class Solution2:
+    def __index__(self):
+        self.dataStack = []
+        self.minStack = []
+
+    def push(self, val):
+        if not self.minStack:
+            self.minStack.append(val)
+        elif self.minStack[-1] > val:
+            self.minStack.append(val)
+        else:
+            self.minStack.append(self.getMin())
+        self.dataStack.append(val)
+
+    def pop(self):
+        res = 0
+        if not self.dataStack:
+            res = self.dataStack[-1]
+            self.dataStack.pop()
+            self.minStack.pop()
+        return res
+
+    def peek(self):
+        if not self.dataStack:
+            return self.dataStack[-1]
+        else:
+            print("栈为空")
+
+    def getMin(self):
+        return self.minStack[-1]

@@ -23,6 +23,18 @@ class Solution:
             num1 = temp
             num2 = carry
         return num1
+
+
+class Solution1:
+    def add(self, num1, num2):
+        while num2 != 0:
+            temp = num1 ^ num2
+            carry = (num1 & num2) << 1
+            num1 = temp & 0xfff
+            num2 = carry
+        return num1
+
+
 # 修改后，如下程序可以通过牛客网调试
 class Solution:
     def Add(self, num1, num2):
@@ -34,14 +46,14 @@ class Solution:
             num2 = carray
         return num1 if num1 >> 31 == 0 else num1 - 2 ** 32
 
+
 # 方法 2：
 # 思路：
 # 偷个懒，使用python内置的sum函数可以实现
 class Solution:
     def Add(self, num1, num2):
         # write code here
-        s=[]
+        s = []
         s.append(num1)
         s.append(num2)
         return sum(s)
-

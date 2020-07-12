@@ -7,6 +7,8 @@ Email: t-zhou@foxmail.com
 date: 2019/11/5 19:43
 desc:
 '''
+
+
 # 思路
 # 1)对于序列化：使用先序遍历，递归将二叉树的值转化为字符，
 # 并且将每个字符用逗号隔开。对于空节点用“‘#’代替。
@@ -18,16 +20,19 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def Serialize(self, root):
         if not root:
-            return '#'
+            return '#,'
         return str(root.val) + ',' + \
-               self.Serialize(root.left) + ','\
-               +self.Serialize(root.right)
+               self.Serialize(root.left) + ',' \
+               + self.Serialize(root.right)
+
     def Deserialize(self, s):
         _list = s.split(',')
         return self.derserializeTree(_list)
+
     def derserializeTree(self, _list):
         if not _list:
             return None

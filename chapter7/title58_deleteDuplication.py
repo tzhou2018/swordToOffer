@@ -21,6 +21,7 @@ class ListNode:
 
 
 class Solution:
+    # 重复的结点不保留
     def deleteDuplication(self, pHead):
         # write code here
         first = ListNode(-1)
@@ -38,6 +39,21 @@ class Solution:
                 last = last.next
         return first.next
 
+    # 保留重复结点
+    def deleteDuplication1(self, pHead):
+        fist = pHead
+        cur = pHead
+        last = pHead
+        while cur and cur.next:
+            if cur.val == cur.next.val:
+                val = cur.val
+                while cur and val == cur.val:
+                    cur = cur.next
+                last.next = cur
+            else:
+                cur = cur.next
+                last = last.next
+        return fist
 
 
 def create_linked_list(arr=None):
@@ -73,3 +89,5 @@ if __name__ == '__main__':
     print_linked_list(pHead)
     new_pHead = Solution().deleteDuplication(pHead)
     print_linked_list(new_pHead)
+    new_pHead1 = Solution().deleteDuplication1(pHead)
+    print_linked_list(new_pHead1)

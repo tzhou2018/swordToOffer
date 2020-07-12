@@ -21,11 +21,12 @@ class Solution:
             return True
         else:
             return False
+
+
 # 方法 2
 # 思路：前两步同方法1；3）max， min分别记录最大值 最小值；
 # 4）需满足条件：max-min<=4,除零外没有重复元素。
-import collections
-class Solution:
+class Solution1:
     def IsContinuous(self, numbers):
         # write code here
         if not numbers:
@@ -34,10 +35,26 @@ class Solution:
         new_list = [i for i in numbers if i > 0]
         new_list.sort()
         min, max = new_list[0], new_list[-1]
-        for j in range(len(new_list)-1):
-            if (new_list[j+1] - new_list[j]) == 0:
+        for j in range(len(new_list) - 1):
+            if (new_list[j + 1] - new_list[j]) == 0:
                 return False
         if (max - min) <= 4:
             return True
         else:
             return False
+
+    # 对上述方法 IsContinuous 进行修改，不适用额外空间
+    def test(self, numbers):
+        if not numbers:
+            return False
+        numbers.sort()
+        # 找到第一个部位零的位置
+        i = numbers.count(0)
+        # 找出除零之后的最大值、最小值
+        _min = numbers[i]
+        _max = numbers[-1]
+        for j in range(j, len(numbers) - 1):
+            if numbers[j + 1] - numbers[j] == 0:
+                return False
+        if (_max - _min) <= 4:
+            return True
